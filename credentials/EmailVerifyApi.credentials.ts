@@ -6,7 +6,7 @@ import type {
 export class EmailVerifyApi implements ICredentialType {
 	name = 'emailVerifyApi';
 	displayName = 'EmailVerify.io API';
-	documentationUrl = 'https://emailverify.io/documentation';
+	documentationUrl = 'https://www.emailverify.io/api/docs/';
 
 	properties: INodeProperties[] = [
 		{

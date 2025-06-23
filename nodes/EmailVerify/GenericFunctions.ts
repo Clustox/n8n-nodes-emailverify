@@ -20,7 +20,7 @@ export async function emailVerifyIoApiRequest(
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 		},
-		uri: `https://api.emailverify.io${endpoint}`,
+		uri: `https://app.emailverify.io/api/v1${endpoint}`,
 		body,
 		qs: {
 			...qs,
