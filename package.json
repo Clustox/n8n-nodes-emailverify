@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-emailverify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">=18.10",
     "pnpm": ">=9.1"
@@ -66,4 +66,4 @@
   "peerDependencies": {
     "n8n-workflow": ">1.7.0"
   }
-} 
+}
