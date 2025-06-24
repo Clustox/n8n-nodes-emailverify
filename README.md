@@ -83,9 +83,9 @@ Returns account information including available credits.
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-* [EmailVerify.io API documentation](https://emailverify.io/documentation)
+* [EmailVerify.io API documentation](https://www.emailverify.io/api/docs/)
 * [EmailVerify.io website](https://emailverify.io)
 
 ## License
 
-[MIT](https://github.com/your-username/n8n-nodes-emailverify/blob/master/LICENSE.md) 
+[MIT](https://github.com/Clustox/n8n-nodes-emailverify/blob/main/LICENSE) 

@@ -19,11 +19,11 @@
   "license": "MIT",
   "homepage": "https://emailverify.io",
   "author": {
-    "name": "emailverify <support@emailverify.io> (https://www.emailverify.io)"
+    "name": "Clustox <support@emailverify.io> (https://www.emailverify.io)"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shafin-zaman/n8n-nodes-emailverify"
+    "url": "https://github.com/Clustox/n8n-nodes-emailverify"
   },
   "main": "index.js",
   "types": "index.d.ts",
