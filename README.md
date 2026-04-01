@@ -15,12 +15,52 @@ This is an n8n community node that lets you use EmailVerify.io in your n8n workf
 
 👉 Get free API key: https://emailverify.io
 
-# Quick Start
+## Why EmailVerify.io?
 
- Go to Settings → Community Nodes
- Install: n8n-nodes-emailverify
- Restart n8n
+- ⚡ Sub-100ms API response
+- 🎯 High accuracy (SMTP-level verification)
+- 💰 10x cheaper than competitors
+- 🔌 Works with n8n, Zapier, APIs, SDKs
 
+## 🚀 Get Started
+
+1. Get your API key → https://emailverify.io/api  
+2. Add EmailVerify node in n8n
+ 3. Go to Settings → Community Nodes
+ 4. Install: n8n-nodes-emailverify
+ 5. Restart n8n
+6. Start validating emails instantly  
+
+🎁 Free credits available
+
+## Example: Validate Signup Emails
+
+Workflow:
+Form → EmailVerify → CRM
+
+- Prevent fake users
+- Block disposable emails
+- Improve data quality
+
+## Example: Clean Email Lists
+
+Workflow:
+Google Sheets → EmailVerify → Cleaned List
+
+- Remove invalid emails
+- Reduce bounce rate
+- Improve campaign ROI
+
+## Example: Lead Qualification
+
+Workflow:
+Webhook → EmailVerify → Slack Notification
+
+- Validate leads instantly
+- Notify sales team
+- Prioritize real users    
+
+## Detail Guide
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
 [Installation](#installation)  
