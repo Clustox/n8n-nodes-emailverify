@@ -26,9 +26,9 @@ This is an n8n community node that lets you use EmailVerify.io in your n8n workf
 
 1. Get your API key → https://emailverify.io/api  
 2. Add EmailVerify node in n8n
- * Go to Settings → Community Nodes
- * Install: n8n-nodes-emailverify
- * Restart n8n
+   * Go to Settings → Community Nodes
+   * Install: n8n-nodes-emailverify
+   * Restart n8n
 3. Start validating emails instantly  
 
 🎁 Free credits available
