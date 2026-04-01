@@ -4,7 +4,22 @@
 
 This is an n8n community node that lets you use EmailVerify.io in your n8n workflows.
 
-EmailVerify.io is a powerful email verification service that helps you validate email addresses, find emails, and check your account balance.
+# EmailVerify.io n8n Node
+
+🚀 Validate emails directly inside your n8n workflows using EmailVerify.io.
+
+- Verify emails in real-time
+- Detect disposable & risky emails
+- Clean lists automatically
+- Improve deliverability across workflows
+
+👉 Get free API key: https://emailverify.io
+
+# Quick Start
+
+ Go to Settings → Community Nodes
+ Install: n8n-nodes-emailverify
+ Restart n8n
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
