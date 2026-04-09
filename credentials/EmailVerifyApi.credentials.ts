@@ -1,4 +1,5 @@
 import type {
+	IAuthenticateGeneric,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -7,6 +8,15 @@ export class EmailVerifyApi implements ICredentialType {
 	name = 'emailVerifyApi';
 	displayName = 'EmailVerify.io API';
 	documentationUrl = 'https://www.emailverify.io/api/docs/';
+
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			qs: {
+				key: '={{$credentials.apiKey}}',
+			},
+		},
+	};
 
 	properties: INodeProperties[] = [
 		{
@@ -21,4 +31,5 @@ export class EmailVerifyApi implements ICredentialType {
 			description: 'API key from EmailVerify.io',
 		},
 	];
-} 
+}
+ 

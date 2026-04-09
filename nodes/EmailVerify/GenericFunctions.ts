@@ -1,8 +1,8 @@
-import type { 
-	IDataObject, 
-	IExecuteFunctions, 
-	IHttpRequestMethods, 
-	IRequestOptions,
+import type {
+	IDataObject,
+	IExecuteFunctions,
+	IHttpRequestMethods,
+	IHttpRequestOptions,
 } from 'n8n-workflow';
 
 export async function emailVerifyIoApiRequest(
@@ -12,29 +12,22 @@ export async function emailVerifyIoApiRequest(
 	body: IDataObject = {},
 	qs: IDataObject = {},
 ): Promise<any> {
-	const credentials = await this.getCredentials('emailVerifyApi');
-	
-	const options: IRequestOptions = {
+	const options: IHttpRequestOptions = {
 		method,
 		headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 		},
-		uri: `https://app.emailverify.io/api/v1${endpoint}`,
-		body,
-		qs: {
-			...qs,
-			key: credentials.apiKey,
-		},
-		json: true,
+		url: `https://app.emailverify.io/api/v1${endpoint}`,
+		qs,
 	};
 
-	if (Object.keys(body).length === 0) {
-		delete options.body;
+	if (Object.keys(body).length > 0) {
+		options.body = body;
 	}
 
 	try {
-		return await this.helpers.request(options);
+		return await this.helpers.httpRequestWithAuthentication.call(this, 'emailVerifyApi', options);
 	} catch (error: any) {
 		if (error.statusCode === 401) {
 			throw new Error('Invalid EmailVerify.io API key');
@@ -47,4 +40,6 @@ export async function emailVerifyIoApiRequest(
 		}
 		throw error;
 	}
-} 
+}
+
+ 
