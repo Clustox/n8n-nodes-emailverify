@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -18,6 +19,13 @@ export class EmailVerifyApi implements ICredentialType {
 		},
 	};
 
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://app.emailverify.io/api/v1',
+			url: '/check-account-balance/',
+		},
+	};
+
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key',
@@ -32,4 +40,5 @@ export class EmailVerifyApi implements ICredentialType {
 		},
 	];
 }
+
  
