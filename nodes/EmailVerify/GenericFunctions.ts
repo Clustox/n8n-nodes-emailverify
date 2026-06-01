@@ -30,26 +30,33 @@ export async function emailVerifyIoApiRequest(
 
 	try {
 		return await this.helpers.httpRequestWithAuthentication.call(this, 'emailVerifyApi', options);
-	} catch (error: any) {
-		// Preserve HTTP context for n8n UI by throwing NodeApiError
-		if (error?.statusCode === 401) {
-			throw new NodeApiError(this.getNode(), {
+	} catch (error) {
+		const statusCode =
+			(error as { statusCode?: number; httpCode?: number })?.statusCode ??
+			(error as { httpCode?: number })?.httpCode;
+
+		if (statusCode === 401) {
+			throw new NodeApiError(this.getNode(), error as JsonObject, {
 				message: 'Invalid EmailVerify.io API key',
-				statusCode: 401,
-			} as unknown as JsonObject);
+				description: 'Check the API key configured in the EmailVerify.io credentials.',
+				httpCode: '401',
+			});
 		}
-		if (error?.statusCode === 429) {
-			throw new NodeApiError(this.getNode(), {
-				message: 'Rate limit exceeded',
-				statusCode: 429,
-			} as unknown as JsonObject);
-		}
-		if (error?.statusCode === 403) {
-			throw new NodeApiError(this.getNode(), {
+		if (statusCode === 403) {
+			throw new NodeApiError(this.getNode(), error as JsonObject, {
 				message: 'Insufficient credits in your EmailVerify.io account',
-				statusCode: 403,
-			} as unknown as JsonObject);
+				description: 'Top up your EmailVerify.io account and try again.',
+				httpCode: '403',
+			});
 		}
+		if (statusCode === 429) {
+			throw new NodeApiError(this.getNode(), error as JsonObject, {
+				message: 'EmailVerify.io rate limit exceeded',
+				description: 'Slow down requests or upgrade your EmailVerify.io plan.',
+				httpCode: '429',
+			});
+		}
+
 		throw new NodeApiError(this.getNode(), error as JsonObject);
 	}
 }

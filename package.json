@@ -25,8 +25,8 @@
     "type": "git",
     "url": "https://github.com/Clustox/n8n-nodes-emailverify"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc -w",
