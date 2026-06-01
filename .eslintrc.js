@@ -22,14 +22,14 @@ module.exports = {
 	],
 
 	extends: [
-		'@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended',
 		'prettier',
 		'plugin:prettier/recommended',
 	],
 
 	plugins: [
 		'@typescript-eslint',
-		'eslint-plugin-n8n-nodes-base',
+		'n8n-nodes-base',
 	],
 
 	rules: {
@@ -48,7 +48,6 @@ module.exports = {
 		'n8n-nodes-base/node-param-description-missing-for-ignore-ssl-issues': 'error',
 		'n8n-nodes-base/node-param-description-missing-for-return-all': 'error',
 		'n8n-nodes-base/node-param-description-missing-for-simplify': 'error',
-		'n8n-nodes-base/node-param-description-missing-for-update-fields': 'error',
 		'n8n-nodes-base/node-param-description-unneeded-backticks': 'error',
 		'n8n-nodes-base/node-param-description-untrimmed': 'error',
 		'n8n-nodes-base/node-param-description-wrong-for-dynamic-multi-options': 'error',
@@ -56,19 +55,15 @@ module.exports = {
 		'n8n-nodes-base/node-param-description-wrong-for-limit': 'error',
 		'n8n-nodes-base/node-param-description-wrong-for-return-all': 'error',
 		'n8n-nodes-base/node-param-description-wrong-for-simplify': 'error',
-		'n8n-nodes-base/node-param-description-wrong-for-update-fields': 'error',
 		'n8n-nodes-base/node-param-display-name-excess-inner-whitespace': 'error',
 		'n8n-nodes-base/node-param-display-name-untrimmed': 'error',
 		'n8n-nodes-base/node-param-display-name-wrong-for-dynamic-multi-options': 'error',
 		'n8n-nodes-base/node-param-display-name-wrong-for-dynamic-options': 'error',
-		'n8n-nodes-base/node-param-display-name-wrong-for-limit': 'error',
-		'n8n-nodes-base/node-param-display-name-wrong-for-return-all': 'error',
 		'n8n-nodes-base/node-param-display-name-wrong-for-simplify': 'error',
 		'n8n-nodes-base/node-param-display-name-wrong-for-update-fields': 'error',
 		'n8n-nodes-base/node-param-option-description-identical-to-name': 'error',
 		'n8n-nodes-base/node-param-option-name-containing-star': 'error',
 		'n8n-nodes-base/node-param-option-name-duplicate': 'error',
-		'n8n-nodes-base/node-param-option-name-wrong-for-get-all': 'error',
 		'n8n-nodes-base/node-param-option-name-wrong-for-upsert': 'error',
 		'n8n-nodes-base/node-param-option-value-duplicate': 'error',
 		'n8n-nodes-base/node-param-required-false': 'error',

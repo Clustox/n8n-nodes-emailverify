@@ -3,7 +3,9 @@ import type {
 	IExecuteFunctions,
 	IHttpRequestMethods,
 	IHttpRequestOptions,
+	JsonObject,
 } from 'n8n-workflow';
+import { NodeApiError } from 'n8n-workflow';
 
 export async function emailVerifyIoApiRequest(
 	this: IExecuteFunctions,
@@ -15,7 +17,7 @@ export async function emailVerifyIoApiRequest(
 	const options: IHttpRequestOptions = {
 		method,
 		headers: {
-			'Accept': 'application/json',
+			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},
 		url: `https://app.emailverify.io/api/v1${endpoint}`,
@@ -29,17 +31,25 @@ export async function emailVerifyIoApiRequest(
 	try {
 		return await this.helpers.httpRequestWithAuthentication.call(this, 'emailVerifyApi', options);
 	} catch (error: any) {
-		if (error.statusCode === 401) {
-			throw new Error('Invalid EmailVerify.io API key');
+		// Preserve HTTP context for n8n UI by throwing NodeApiError
+		if (error?.statusCode === 401) {
+			throw new NodeApiError(this.getNode(), {
+				message: 'Invalid EmailVerify.io API key',
+				statusCode: 401,
+			} as unknown as JsonObject);
 		}
-		if (error.statusCode === 429) {
-			throw new Error('Rate limit exceeded');
+		if (error?.statusCode === 429) {
+			throw new NodeApiError(this.getNode(), {
+				message: 'Rate limit exceeded',
+				statusCode: 429,
+			} as unknown as JsonObject);
 		}
-		if (error.statusCode === 403) {
-			throw new Error('Insufficient credits in your EmailVerify.io account');
+		if (error?.statusCode === 403) {
+			throw new NodeApiError(this.getNode(), {
+				message: 'Insufficient credits in your EmailVerify.io account',
+				statusCode: 403,
+			} as unknown as JsonObject);
 		}
-		throw error;
+		throw new NodeApiError(this.getNode(), error as JsonObject);
 	}
 }
-
- 

@@ -163,4 +163,4 @@ export class EmailVerify implements INodeType {
 
 		return [returnData];
 	}
-} 
+}

@@ -40,5 +40,3 @@ export class EmailVerifyApi implements ICredentialType {
 		},
 	];
 }
-
- 
