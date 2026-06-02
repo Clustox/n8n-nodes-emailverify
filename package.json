@@ -19,7 +19,9 @@
   "license": "MIT",
   "homepage": "https://emailverify.io",
   "author": {
-    "name": "Clustox <support@emailverify.io> (https://www.emailverify.io)"
+    "name": "Clustox",
+    "email": "support@emailverify.io",
+    "url": "https://www.emailverify.io"
   },
   "repository": {
     "type": "git",
@@ -61,6 +63,6 @@
     "typescript": "~5.1.3"
   },
   "peerDependencies": {
-    "n8n-workflow": ">1.7.0"
+    "n8n-workflow": "*"
   }
 }
